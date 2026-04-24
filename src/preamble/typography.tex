@@ -1,0 +1,52 @@
+% Remove page numbering
+%\pagestyle{empty}
+
+\ifpdftex
+  \usepackage{lmodern}
+  \usepackage[T1]{fontenc}
+\fi
+
+\ifluatex
+  \usepackage{fontspec}
+  \usepackage[olddefault, varnothing]{fontsetup}  % New Computer Modern in regular weight
+  \setmathfont[range=bb, StylisticSet=3]{NewCMMath-Regular.otf}
+  \setmathfont[range=bb/{Latin}]{NewCMMath-Regular.otf}
+\fi
+
+\usepackage[stretch=16]{microtype}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+% Disable hyphenation
+%\pretolerance    = 100               % default: 100
+\tolerance        = 5000              % default: 200
+\emergencystretch = 0.04\columnwidth  % default: 0
+\hyphenpenalty    = 10000             % default: 50
+\exhyphenpenalty  = 5000              % default: 50
+
+% Badness threshold for hbox warnings
+\hbadness = 1500  % default: 1000
+
+% Margins
+\usepackage[
+  top    = 32mm,
+  bottom = 32mm,
+  left   = 28mm,
+  right  = 28mm
+]{geometry}
+
+% Line spacing
+\usepackage{setspace}
+%\onehalfspacing
+\setstretch{1.4}
+
+% Disable indentation at beginning of paragraphs; and customise vertical spacing
+\usepackage[
+  skip    = 0.36\baselineskip plus 0.12\baselineskip minus 0.08\baselineskip,  % vertical spacing between paragraphs;
+  tocskip = 0.2\baselineskip  plus 0.06\baselineskip minus 0.04\baselineskip   % vertical spacing between toc entries
+]{parskip}
+
+% Disable paragraphs breaking across a pagebreak with only one line on one of the pages,
+% and discourage breaking with only a few lines on one side
+\widowpenalties=5 10000 6000 600 150 0
+\clubpenalties=5 10000 6000 600 150 0

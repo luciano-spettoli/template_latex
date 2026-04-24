@@ -1,0 +1,27 @@
+% Divisibility
+\newcommand{\divides}{\mid}    % divides
+\newcommand{\ndivides}{\nmid}  % does not divide
+\let\notdivides\ndivides
+
+% Normal subgroup
+\ifpdftex
+  \newcommand{\normalsubgroup}{\mathrel{\lhd}}        % is normal subgroup of
+  \newcommand{\normalsubgroupeq}{\mathrel{\unlhd}}    % is normal subgroup of or equal to
+  \newcommand{\normalsupergroup}{\mathrel{\rhd}}      % contains as normal subgroup
+  \newcommand{\normalsupergroupeq}{\mathrel{\unrhd}}  % contains as normal subgroup or equal to
+
+  \newcommand{\notnormalsubgroupeq}{\mathrel{\ntrianglelefteq}}     % not normal subgroup of nor equal to
+  \newcommand{\notnormalsupergroupeq}{\mathrel{\ntrianglerighteq}}  % does not contain as normal subgroup nor equal to
+\fi
+
+\ifluatex
+  \newcommand{\normalsubgroup}{\mathrel{\vartriangleleft}}      % is normal subgroup of
+  \newcommand{\normalsubgroupeq}{\mathrel{\trianglelefteq}}     % is normal subgroup of or equal to
+  \newcommand{\normalsupergroup}{\mathrel{\vartriangleright}}   % contains normal subgroup
+  \newcommand{\normalsupergroupeq}{\mathrel{\trianglerighteq}}  % contains normal subgroup or equal to
+
+  \newcommand{\notnormalsubgroup}{\mathrel{\nvartriangleleft}}      % not normal subgroup of
+  \newcommand{\notnormalsubgroupeq}{\mathrel{\ntrianglelefteq}}     % not normal subgroup of nor equal to
+  \newcommand{\notnormalsupergroup}{\mathrel{\nvartriangleright}}   % not normal subgroup of nor equal to
+  \newcommand{\notnormalsupergroupeq}{\mathrel{\ntrianglerighteq}}  % does not contain as normal subgroup nor equal to
+\fi

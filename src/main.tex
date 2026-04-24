@@ -1,0 +1,49 @@
+\input{pdfinfo}
+
+\documentclass{article}
+
+% Preamble
+\input{preamble/preamble}
+
+% Title
+\title{\texorpdfstring{\Huge Template \LaTeX\ document}{Template LaTeX document}}
+\author{}
+\date{\num[minimum-integer-digits = 2]{\number\day}/\num[minimum-integer-digits = 2]{\number\month}/\number\year}  % \num is provided by siunitx package
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+\thispagestyle{empty}
+\vspace{3cm}
+
+\section*{Introduction} \addcontentsline{toc}{section}{Introduction}
+\input{sections/introduction}
+
+% Table of Contents
+\clearpage
+\boldmath
+\tableofcontents
+\unboldmath
+\clearpage
+
+\pagenumbering{arabic}
+
+
+\section{First section}
+\input{sections/sec_1}
+
+\section{Second section}
+\input{sections/sec_2}
+
+\section{Third section}
+\input{sections/sec_3}
+
+
+% References
+\newpage
+\nocite{*}
+\printbibliography[heading=bibintoc]
+
+\end{document}

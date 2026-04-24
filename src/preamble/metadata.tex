@@ -1,0 +1,69 @@
+\usepackage{xcolor}
+\definecolor{urlblue}{rgb}{0,0,0.75}
+
+\ifpdfa
+  \usepackage[pdfa]{hyperref}
+  \usepackage[a-2u]{pdfx}  % PDF/A-2 is stricter than PDF/A-3
+\else
+  \usepackage{hyperref}
+\fi
+
+\hypersetup{
+  colorlinks = true,
+  linktoc    = all,
+  linkcolor  = black,
+  citecolor  = black,
+  urlcolor   = urlblue,
+}
+
+\usepackage{bookmark}
+\bookmarksetup{
+  depth = 2,
+  open = true,
+  openlevel = 2,
+}
+
+\usepackage{tocbibind}
+
+
+% \ifpdftex
+%   \ifpdfa
+%     \pdfinfo{
+%       /Producer ()
+%       /Creator  ()
+%     }
+%   \fi
+%   \pdfsuppressptexinfo-1  % Remove PTEX metadata
+%   \pdfinfoomitdate=1      % Remove /CreationDate and /ModDate
+%   %\pdftrailerid{}        % Remove pdftrailerid
+%
+% % \usepackage[
+% %        nodocdata = false,  % keep title, author, subject, keywords
+% %       noeditdata = false,  % keep pdf creation date
+% %   noproducerdata = true,   % remove pdfproducer and pdfcreator
+% %       noptexdata = true,   % remove PTEX data (PTEX.Fullbanner, PTEX.FileName, PTEX.PageNumber, PTEX.InfoDict)
+% %   nopdftrailerid = false   % keep pdftrailerid (hash of the date and time and the output file name)
+% % ]{pdfprivacy}
+% \fi
+
+
+\ifluatex
+  %\pdfextension info {
+  %  /Producer ()
+  %  /Creator  ()
+  %}
+  %\pdfvariable suppressoptionalinfo -1  % Remove all below metadata
+  \pdfvariable suppressoptionalinfo \numexpr
+        0
+    +   1   % PTEX.FullBanner
+    +   2   % PTEX.FileName
+    +   4   % PTEX.PageNumber
+    +   8   % PTEX.InfoDict
+    +  16   % Creator
+%   +  32   % CreationDate
+%   +  64   % ModDate
+    + 128   % Producer
+    + 256   % Trapped
+%   + 512   % ID (pdftrailerid)
+  \relax
+\fi

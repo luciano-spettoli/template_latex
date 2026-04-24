@@ -1,0 +1,84 @@
+\newif\ifpdfa        % PDF/A-2u, PDF version 1.7
+\pdfafalse
+
+\newif\ifpdfastrong  % PDF/A-3a and PDF/UA-1, PDF version 1.7
+\pdfastrongfalse
+
+\newif\iftagpdf      % PDF/A-4f and PDF/UA-2, PDF version 2.0
+\tagpdftrue
+
+
+\ifdefined\NOTAG
+  \tagpdffalse
+  \pdfatrue
+\else
+  \ifdefined\PDFAA
+    \pdfastrongtrue
+    \tagpdffalse
+  \fi
+\fi
+
+
+% PDF/A-4f and PDF/UA-2
+\iftagpdf
+  \UseName{sys_gset_rand_seed:n}{0}
+  \DocumentMetadata{
+    lang        = en,
+    tagging     = on,
+    pdfversion  = 2.0,
+    pdfstandard = A-4f,
+    pdfstandard = UA-2,
+    %uncompress,
+  }
+  \tagpdfsetup{math/setup=mathml-SE}
+  %\tagpdfsetup{math/setup=mathml-AF}
+  %\tagpdfsetup{math/mathml/luamml/load=false}
+
+  \SetKeys[hyp]{
+    pdftitle  = {Template LaTeX document},
+    pdfauthor = {},
+  }
+  \AddToDocumentProperties[hyperref]{pdfkeywords}{TeX, LaTeX, template, typesetting}
+  \AddToDocumentProperties[hyperref]{pdfsubject}{Template LaTeX document}
+  \AddToDocumentProperties[hyperref]{pdfcopyrighted}{False}
+\fi
+
+
+% PDF/A-3a and PDF/UA-1
+\ifpdfastrong
+  \UseName{sys_gset_rand_seed:n}{0}
+  \DocumentMetadata{
+    lang        = en,
+    tagging     = on,
+    pdfversion  = 1.7,
+    pdfstandard = A-3a,
+    pdfstandard = UA-1,
+    %uncompress,
+  }
+
+  \SetKeys[hyp]{
+    pdftitle  = {Template LaTeX document},
+    pdfauthor = {},
+  }
+  \AddToDocumentProperties[hyperref]{pdfkeywords}{TeX, LaTeX, template}
+  \AddToDocumentProperties[hyperref]{pdfsubject}{Template LaTeX document}
+  \AddToDocumentProperties[hyperref]{pdfcopyrighted}{False}
+\fi
+
+
+% PDF/A-2u
+\ifpdfa
+\begin{filecontents}[force]{\jobname.xmpdata}
+  \Title{Template LaTeX document}
+  \Author{}
+  \Keywords{%
+    TeX\sep
+    LaTeX\sep
+    template\sep
+    typesetting%
+  }
+  \Subject{Template LaTeX document}
+  \Language{en}
+  \Copyrighted{False}%
+\end{filecontents}
+\fi
