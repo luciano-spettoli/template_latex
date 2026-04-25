@@ -1,14 +1,14 @@
 # Contributing
 
 ## Report errors
-Errors, typos, inaccuracies, etc. can be reported by opening an issue with [`this issue template`](https://github.com/luciano-spettoli/template_latex/issues/new?template=error_report.yml).
+Errors, typos, inaccuracies, etc. can be reported by opening an issue with [this issue template](https://github.com/luciano-spettoli/template_latex/issues/new?template=error_report.yml).
 
 ## Report code issues
-Bugs in the source code can be reported via [`this issue template`](https://github.com/luciano-spettoli/template_latex/issues/new?template=bug_report.yml).
+Bugs in the source code can be reported via [this issue template](https://github.com/luciano-spettoli/template_latex/issues/new?template=bug_report.yml).
 
 ## Suggest improvements
 Suggestions for improvements in the wording, phrasing, grammar, etc.
-can be made by opening an issue with [`this issue template`](https://github.com/luciano-spettoli/template_latex/issues/new?template=proposal.yml), or by opening a pull request.
+can be made by opening an issue with [this issue template](https://github.com/luciano-spettoli/template_latex/issues/new?template=proposal.yml), or by opening a pull request.
 
 ## Code contributions
 Suggestions for improvements in the LaTeX source code or in the project structure
