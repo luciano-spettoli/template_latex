@@ -26,25 +26,25 @@
 \usepackage{tocbibind}
 
 
-% \ifpdftex
+\ifpdftex
 %   \ifpdfa
 %     \pdfinfo{
 %       /Producer ()
 %       /Creator  ()
 %     }
 %   \fi
-%   \pdfsuppressptexinfo-1  % Remove PTEX metadata
-%   \pdfinfoomitdate=1      % Remove /CreationDate and /ModDate
-%   %\pdftrailerid{}        % Remove pdftrailerid
-%
-% % \usepackage[
-% %        nodocdata = false,  % keep title, author, subject, keywords
-% %       noeditdata = false,  % keep pdf creation date
-% %   noproducerdata = true,   % remove pdfproducer and pdfcreator
-% %       noptexdata = true,   % remove PTEX data (PTEX.Fullbanner, PTEX.FileName, PTEX.PageNumber, PTEX.InfoDict)
-% %   nopdftrailerid = false   % keep pdftrailerid (hash of the date and time and the output file name)
-% % ]{pdfprivacy}
-% \fi
+  \pdfsuppressptexinfo-1  % Remove PTEX metadata
+  \pdfinfoomitdate=1      % Remove /CreationDate and /ModDate
+  %\pdftrailerid{}        % Remove pdftrailerid
+
+% \usepackage[
+%        nodocdata = false,  % keep title, author, subject, keywords
+%       noeditdata = false,  % keep pdf creation date
+%   noproducerdata = true,   % remove pdfproducer and pdfcreator
+%       noptexdata = true,   % remove PTEX data (PTEX.Fullbanner, PTEX.FileName, PTEX.PageNumber, PTEX.InfoDict)
+%   nopdftrailerid = false   % keep pdftrailerid (hash of the date and time and the output file name)
+% ]{pdfprivacy}
+\fi
 
 
 \ifluatex
